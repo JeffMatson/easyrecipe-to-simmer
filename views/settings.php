@@ -17,6 +17,7 @@ class Settings {
 
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'bootstrap', ER2SIMMER_URL . 'js/includes/bootstrap.min.js', array( 'jquery' ), '3.3.7' );
+		wp_enqueue_script( 'er2simmer-settings', ER2SIMMER_URL . 'js/settings.js', array( 'jquery' ), '1.0' );
 	}
 
 	public function enqueue_styles() {
@@ -32,13 +33,15 @@ class Settings {
 
 			<?php $this->build_post_selections(); ?>
 
-
 		</div>
 
 	<?php
 	}
 
 	public function build_post_selections() { ?>
+
+		<button id="select-all" type="button" class="btn btn-secondary">Select All</button>
+		<button type="button" class="btn btn-primary" style="float: right">Import Selected</button>
 
 		<ul class="list-group">
 
@@ -47,7 +50,7 @@ class Settings {
 				<div style="display:flex; align-items: center">
 				<div class="checkbox col-md-1 col-lg-1">
 					<label>
-						<input type="checkbox">
+						<input type="checkbox" class="import-checkbox">
 					</label>
 				</div>
 				<div class="col-md-9 col-lg-9">
