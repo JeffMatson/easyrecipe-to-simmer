@@ -2,6 +2,13 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/**
+ * Handles autoloading of classes
+ *
+ * @since 0.1
+ *
+ * @param string $classname The class name
+ */
 function easyrecipe_to_simmer_autoload( $classname ) {
 
 	$class = str_replace( '\\', DIRECTORY_SEPARATOR, str_replace( '_', '-', strtolower($classname) ) );
