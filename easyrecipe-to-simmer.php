@@ -38,6 +38,8 @@ function er_simmer_init() {
 //	var_dump($recipe_stuff);
 }
 
+add_action( 'wp_ajax_import_post', array( '\EasyRecipe_To_Simmer\Ajax', 'import_post' ) );
+
 
 //
 //var_dump($recipe_stuff);
