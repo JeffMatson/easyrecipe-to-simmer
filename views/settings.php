@@ -67,13 +67,4 @@ class Settings {
 	<?php
 	}
 
-	public function build_import_page() {
-
-		$selected_posts = json_decode( $_POST['er2simmer_selected'] );
-
-
-
-
-	}
-
 }

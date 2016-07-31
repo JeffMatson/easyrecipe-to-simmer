@@ -105,7 +105,8 @@ class EasyRecipe {
 		$ingredients = array();
 
 		foreach ( $matches[1] as $ingredient ) {
-			$ingredients[] = \Simmer_Admin_Bulk_Add::get_instance()->parse_input( $ingredient, 'ingredient');
+			$parsed_ingredient = \Simmer_Admin_Bulk_Add::get_instance()->parse_input( $ingredient, 'ingredient');
+			$ingredients[] = $parsed_ingredient['0'];
 		}
 
 		return $ingredients;
